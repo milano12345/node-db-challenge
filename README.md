@@ -37,15 +37,21 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 ## Self-Study/Essay Questions
 
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
+- [ ] Explain the difference between `Relational Databases` and `SQL`. 
 
-- [ ] Explain the difference between `Relational Databases` and `SQL`.
+The RDBMS is the system that allows you to use databases and SQL is the language used to interact with the database. - 
 
-- [ ] Why do tables need a `primary key`?
+[ ] Why do tables need a `primary key`? 
+
+It's is used to uniquely identify a row in a database. A primary key's main features are: It must contain a unique value for each row of data. It cannot contain null values. 
 
 - [ ] What is the name given to a table column that references the primary key on another table.
 
+ The table column that references the primary key on another table is called the foreign key. 
+
 - [ ] What do we need in order to have a _many to many_ relationship between two tables.
 
+ Many-to-many relationships require a third table, known as an associate or linking table, because relational systems can't directly accommodate the relationship
 ## Minimum Viable Product
 
 Take the steps necessary to complete the project from scratch. Start by initializing your project with a `package.json` and go from there.
