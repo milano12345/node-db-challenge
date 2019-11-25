@@ -1,11 +1,12 @@
 const express = require("express");
 
-const Hub = require("../data/db");
+const dataBase = require("../data/dbModel");
 
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  Hub.find(req.query)
+  dataBase
+    .find(req.query)
     .then(hubs => {
       res.status(200).json(hubs);
     })
@@ -18,7 +19,8 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  Hub.add(req.body)
+  dataBase
+    .add(req.body)
     .then(hub => {
       res.status(201).json(hub);
     })
