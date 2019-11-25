@@ -41,17 +41,34 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 The RDBMS is the system that allows you to use databases and SQL is the language used to interact with the database. - 
 
+<<<<<<< HEAD
 [ ] Why do tables need a `primary key`? 
 
 It's is used to uniquely identify a row in a database. A primary key's main features are: It must contain a unique value for each row of data. It cannot contain null values. 
+=======
+      The RDBMS is the system that allows you to use databases and SQL is the language used to interact with the database.
+
+- [ ] Why do tables need a `primary key`?
+>>>>>>> 91a1d1411e1cdf0af628d8c20796c058fc631196
+
+      It's is used to uniquely identify a row in a database. A primary key's main features are: It must contain a unique value for each row of data. It cannot contain null values.
 
 - [ ] What is the name given to a table column that references the primary key on another table.
 
+<<<<<<< HEAD
  The table column that references the primary key on another table is called the foreign key. 
 
 - [ ] What do we need in order to have a _many to many_ relationship between two tables.
 
  Many-to-many relationships require a third table, known as an associate or linking table, because relational systems can't directly accommodate the relationship
+=======
+    The table column that references the primary key on another table is called the foreign key.
+
+- [ ] What do we need in order to have a _many to many_ relationship between two tables.
+
+    Many-to-many relationships require a third table, known as an associate or linking table, because relational systems can't directly accommodate the relationship
+
+>>>>>>> 91a1d1411e1cdf0af628d8c20796c058fc631196
 ## Minimum Viable Product
 
 Take the steps necessary to complete the project from scratch. Start by initializing your project with a `package.json` and go from there.
