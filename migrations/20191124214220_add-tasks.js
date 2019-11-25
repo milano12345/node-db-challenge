@@ -1,14 +1,14 @@
 exports.up = function(knex) {
-  return knex.schema.createTable("tasks", function(tasks) {
-    tasks.increments("id");
-    tasks.string("title", 30).notNullable();
-    tasks
-      .integer("ProjectID")
+  return knex.schema.createTable("tasks", tbl => {
+    tbl.increments("id");
+    tbl.string("title", 30).notNullable();
+    tbl
+      .integer("projectID")
       .references("id")
       .inTable("projects")
       .notNull()
       .onDelete("cascade");
-    tasks.timestamps(true, true);
+    tbl.timestamps(true, true);
   });
 };
 

@@ -1,6 +1,6 @@
 const express = require("express");
 
-const Hub = require("../data/dbModel");
+const dataBase = require("../data/dbModel");
 
 const router = express.Router();
 

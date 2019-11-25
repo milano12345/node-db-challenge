@@ -1,24 +1,24 @@
 exports.up = function(knex) {
-  return knex.schema.createTable("projects", function(posts) {
-    projects.increments("id");
-    projects
+  return knex.schema.createTable("projects", tbl => {
+    tbl.increments("id");
+    tbl
       .text("name", 30)
       .unique()
       .notNullable();
-    projects.text("description", 300);
-    projects
+    tbl.text("description", 300);
+    tbl
       .integer("taskID")
       .references("id")
       .inTable("tasks")
       .notNull()
       .onDelete("cascade");
-    projects
+    tbl
       .integer("resourceID")
       .references("id")
       .inTable("resources")
       .notNull()
       .onDelete("cascade");
-    projects.timestamps(true, true);
+    tbl.timestamps(true, true);
   });
 };
 
