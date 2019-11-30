@@ -18,7 +18,7 @@ exports.up = function(knex) {
       .inTable("resources")
       .notNull()
       .onDelete("cascade");
-    tbl.timestamps(true, true);
+    tbl.timestamp("createdAt").defaultTo(knex.fn.now());
   });
 };
 

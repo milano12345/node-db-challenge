@@ -22,7 +22,7 @@ router.post("/", (req, res) => {
   dataBase
     .add(req.body)
     .then(hub => {
-      res.status(201).json(hub);
+      res.status(201).json(hub, console.log("posted"));
     })
     .catch(error => {
       console.log(error);
