@@ -1,7 +1,6 @@
 exports.up = function(knex) {
   return knex.schema.createTable("resources", tbl => {
     tbl.increments("id");
-
     tbl.text("title", 30).notNullable();
     tbl
       .integer("projectID")
@@ -9,7 +8,8 @@ exports.up = function(knex) {
       .inTable("projects")
       .notNull()
       .onDelete("cascade");
-    tbl.timestamps(true, true);
+    tbl.text("description", 50).notNullable();
+    tbl.timestamp("createdAt").defaultTo(knex.fn.now());
   });
 };
 

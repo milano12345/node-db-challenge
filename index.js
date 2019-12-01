@@ -5,7 +5,7 @@ const taskRouter = require("./router/tasks");
 
 const port = 9000;
 
-server.use("/projects", projectRouter);
+server.use("/api/projects", projectRouter);
 server.use("/api/resources", resourceRouter);
 server.use("/api/tasks", taskRouter);
 

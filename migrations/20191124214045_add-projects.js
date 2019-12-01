@@ -13,6 +13,10 @@ exports.up = function(knex) {
       .notNull()
       .onDelete("cascade");
     tbl
+      .integer("completed")
+      .notNull()
+      .defaultTo(false);
+    tbl
       .integer("resourceID")
       .references("id")
       .inTable("resources")

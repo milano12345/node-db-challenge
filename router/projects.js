@@ -6,7 +6,14 @@ router.get("/", (req, res) => {
   dataBase
     .find(req.query)
     .then(hubs => {
-      res.status(200).json(hubs);
+      hubs.forEach(hub => {
+        if ((hub.completed = 1)) {
+          hub.completed = true;
+        } else {
+          hub.completed === false;
+        }
+        res.status(200).send(hub);
+      });
     })
     .catch(error => {
       console.log(error);

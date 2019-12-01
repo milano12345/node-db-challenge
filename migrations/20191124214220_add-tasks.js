@@ -8,7 +8,12 @@ exports.up = function(knex) {
       .inTable("projects")
       .notNull()
       .onDelete("cascade");
-    tbl.timestamps(true, true);
+    tbl
+      .integer("completed")
+      .notNull()
+      .defaultTo(false);
+    tbl.text("notes", 50).notNullable();
+    tbl.timestamp("createdAt").defaultTo(knex.fn.now());
   });
 };
 
