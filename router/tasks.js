@@ -1,8 +1,6 @@
-const express = require("express");
+const router = require("express").Router();
 
 const dataBase = require("../data/dbModel");
-
-const router = express.Router();
 
 router.get("/", (req, res) => {
   dataBase
@@ -19,17 +17,21 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  dataBase
-    .add(req.body)
-    .then(hub => {
-      res.status(201).json(hub, console.log("posted"));
-    })
-    .catch(error => {
-      console.log(error);
-      res.status(500).json({
-        message: "Error adding the hub"
+  if (!req.body) {
+    res.status(200).json({ message: "missing a body" });
+  } else {
+    dataBase
+      .add(req.body)
+      .then(hub => {
+        res.status(201).json(hub);
+      })
+      .catch(error => {
+        console.log(error);
+        res.status(500).json({
+          message: "Error adding the hub"
+        });
       });
-    });
+  }
 });
 
 module.exports = router;
